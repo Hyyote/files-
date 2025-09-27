@@ -802,12 +802,16 @@ for %%a in (
     "WdfDirectedPowerTransitionEnable"
     "EnableIdlePowerManagement"
     "IdleInWorkingState"
-) do (
-    for /f >NUL 2>&1 "delims=" %%b in ('reg query "HKLM\SYSTEM\CurrentControlSet\Enum" /s /f >NUL 2>&1 "%%~a" ^| findstr "HKEY"') do (
-        REG ADD "%%b" /v "%%~a" /t REG_DWORD /d "0" /f >NUL 2>&1
-    "WakeEnabled" 
+    "WakeEnabled"
     "WdkSelectiveSuspendEnable"
-    for /f >NUL 2>&1 "delims=" %%b in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class" /s /f >NUL 2>&1 "%%~a" ^| findstr "HKEY"') do (
+) do (
+    for /f "delims=" %%b in ('reg query "HKLM\SYSTEM\CurrentControlSet\Enum" /s /f "%%~a" ^| findstr "HKEY" 2^>nul') do (
+        reg add "%%b" /v "%%~a" /t REG_DWORD /d 0 /f >nul 2>&1
+    )
+    for /f "delims=" %%c in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class" /s /f "%%~a" ^| findstr "HKEY" 2^>nul') do (
+        reg add "%%c" /v "%%~a" /t REG_DWORD /d 0 /f >nul 2>&1
+    )
+)
 devmanview /disable "High Precision Event Timer"
 devmanview /disable "Microsoft GS Wavetable Synth"
 devmanview /disable "Microsoft RRAS Root Enumerator"
@@ -835,4 +839,5 @@ devmanview /disable "Root Print Queue"
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\pci\Parameters" /v "ASPMOptOut" /t REG_DWORD /d "1" /f >NUL 2>&1
 reg add "HKLM\SYSTEM\CurrentControlSet\Enum\USB" /v "AllowIdleIrpInD3" /t REG_DWORD /d "0" /f >NUL 2>&1
 reg add "HKLM\SYSTEM\CurrentControlSet\Enum\USB" /v "EnhancedPowerManagementEnabled" /t REG_DWORD /d "0" /f >NUL 2>&1
+
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "IoPageLockLimit" /t REG_DWORD /d "4294967295" /f >NUL 2>&1
