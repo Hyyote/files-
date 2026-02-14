@@ -1,5 +1,5 @@
 # Unified OS Amputation Kit
-**Run with NSudo System privileges.**
+## Run with NSudo System privileges.
 
 Merged from: **DiagnosticRemoval** + **WER Stub** + additional optimizations.
 
