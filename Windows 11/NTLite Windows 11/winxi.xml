@@ -4665,7 +4665,8 @@
 		<File>C:\Users\user\Desktop\postinstall\Windows 11\NTLite Windows 11\RegFiles_Win11\Shorter Hung Service Timeout.reg</File>
 		<File>C:\Users\user\Desktop\postinstall\Windows 11\NTLite Windows 11\RegFiles_Win11\System Managed - Last Access Updates Disabled.reg</File>
 		<File>C:\Users\user\Desktop\postinstall\Windows 11\NTLite Windows 11\RegFiles_Win11\mouse.reg</File>
-		<File>C:\Users\user\Desktop\postinstall\Windows 11\NTLite Windows 11\RegFiles_Win11\Disable core parking.reg</File>
+		<File>C:\Users\user\Desktop\postinstall\Windows 11\NTLite Windows 11\RegFiles_Win11\Disable Automatic Updates.reg</File>
+	    <File>C:\Users\user\Desktop\postinstall\Windows 11\NTLite Windows 11\RegFiles_Win11\Disable core parking.reg</File>
 		<PowerScheme type="3" guid="3af9b8d9-7c97-431d-ad78-34a8bfea439f" remove="true"></PowerScheme>
 		<PowerScheme type="3" guid="8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c" remove="true"></PowerScheme>
 		<PowerScheme type="3" guid="961cc777-2547-4f9d-8174-7d86181b8a7a" remove="true"></PowerScheme>
@@ -4674,3 +4675,4 @@
 		<PowerScheme type="3" guid="e9a42b02-d5df-448d-aa00-03f14749eb61" remove="true"></PowerScheme>
 	</Registry>
 </Preset>
+
