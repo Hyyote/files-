@@ -35,7 +35,6 @@
 		<c>appv 'Application Virtualization (App-V)'</c>
 		<c>apxunit 'APX speaker and microphone driver'</c>
 		<c>asimov 'Telemetry Client'</c>
-		<c>assembly.net '.NET assembly cache'</c>
 		<c>assignedaccess 'Assigned Access'</c>
 		<c>audiospatializer 'Audio Spatializer (APO)'</c>
 		<c>audit 'Windows Auditing'</c>
@@ -715,8 +714,6 @@
 		<c>filemanager 'File Manager (OneDrive &amp; Photos)'</c>
 		<c>filerevocationmanager 'File Revocation Manager - 32 bit'</c>
 		<c>filetrace 'File Trace MiniFilter'</c>
-		<c>firewall 'Windows Firewall'</c>
-		<c>firewallsvc 'Windows Firewall Service'</c>
 		<c>firstlogonanim 'First-logon animation'</c>
 		<c>flashactivex 'Adobe Flash for Internet Explorer'</c>
 		<c>flashactivex32 'Adobe Flash for Internet Explorer - 32 bit'</c>
@@ -4675,4 +4672,5 @@
 		<PowerScheme type="3" guid="e9a42b02-d5df-448d-aa00-03f14749eb61" remove="true"></PowerScheme>
 	</Registry>
 </Preset>
+
 
