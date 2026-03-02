@@ -264,54 +264,6 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\BrokerInfrastructure\Parameters"
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\BrokerInfrastructure\Parameters" /v "GlobalCoalesceMaxAdditionalTasksPerWake" /t REG_DWORD /d "0" /f >nul 2>&1
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\BrokerInfrastructure\Parameters" /v "GlobalCoalesceMaxEarlyFireWindowMs" /t REG_DWORD /d "0" /f >nul 2>&1
 
-
-@echo Disable Devices
-cd C:\Program Files\Pro\Files\Device Manager >nul 2>&1
-DevManView /disable "Direct memory access controller" >nul 2>&1
-DevManView /disable "Virtual Device Enumerator" >nul 2>&1
-DevManView /disable "System speaker" >nul 2>&1
-DevManView /disable "UMBus Root Bus Enumerator" >nul 2>&1
-DevManView /disable "Microsoft GS Wavetable Synth" >nul 2>&1
-DevManView /disable "AMD PSP" >nul 2>&1
-DevManView /disable "Direct memory access controller" >nul 2>&1
-DevManView /disable "Base System Device" >nul 2>&1
-DevManView /disable "Composite Bus Enumerator" >nul 2>&1
-DevManView /disable "System speaker" >nul 2>&1
-DevManView /disable "High Precision Event Timer" >nul 2>&1
-DevManView /disable "Intel Management Engine" >nul 2>&1
-DevManView /disable "Programmable interrupt controller" >nul 2>&1
-DevManView /disable "Microsoft Kernel Debug Network Adapter" >nul 2>&1
-DevManView /disable "Microsoft Virtual Drive Enumerator" >nul 2>&1
-DevManView /disable "Microsoft RRAS Root Enumerator" >nul 2>&1
-DevManView /disable "NDIS Virtual Network Adapter Enumerator" >nul 2>&1
-DevManView /disable "Numeric Data Processor" >nul 2>&1
-DevManView /disable "PCI Encryption/Decryption Controller" >nul 2>&1
-DevManView /disable "PCI Memory Controller" >nul 2>&1
-DevManView /disable "PCI standard RAM Controller" >nul 2>&1
-DevManView /disable "SM Bus Controller" >nul 2>&1
-DevManView /disable "System board" >nul 2>&1
-DevManView /disable "System Timer" >nul 2>&1
-DevManView /disable "UMBus Root Bus Enumerator" >nul 2>&1
-DevManView /disable "Unknown Device" >nul 2>&1
-DevManView /disable "WAN Miniport (IKEv2)" >nul 2>&1
-DevManView /disable "WAN Miniport (IP)" >nul 2>&1
-DevManView /disable "WAN Miniport (IPv6)" >nul 2>&1
-DevManView /disable "WAN Miniport (L2TP)" >nul 2>&1
-DevManView /disable "WAN Miniport (Network Monitor)" >nul 2>&1
-DevManView /disable "WAN Miniport (PPPOE)" >nul 2>&1
-DevManView /disable "WAN Miniport (PPTP)" >nul 2>&1
-DevManView /disable "WAN Miniport (SSTP)" >nul 2>&1
-DevManView /disable "ACPI\PNP0C0C\AA" >nul 2>&1
-DevManView /disable "ACPI\PNP0C14\ASUSLEDCONTROLWMI" >nul 2>&1
-DevManView /disable "ACPI\PNP0C14\ASUSMBSWINTERFACE" >nul 2>&1
-DevManView /disable "ACPI\PNP0C14\AOD" >nul 2>&1
-DevManView /disable "ACPI\PNP0C14\AWW" >nul 2>&1
-DevManView /disable "SWD\RADIO\{3DB5895D-CC28-44B3-AD3D-6F01A782B8D2}" >nul 2>&1
-DevManView /disable "ROOT\SPACEPORT\0000" >nul 2>&1
-DevManView /Uninstall "NVIDIA Virtual Audio Device (Wave Extensible) (WDM)" >nul 2>&1
-DevManView /Uninstall "NvModuleTracker Device" >nul 2>&1
-
-
 @echo Sticky Keys
 reg add "HKCU\Control Panel\Accessibility\StickyKeys" /v "Flags" /t REG_SZ /d "506" /f >nul 2>&1
 
@@ -846,4 +798,5 @@ for %%R in (
 REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger" /f
 
 :: Prevent the Software Protection service attempting to register a restart every 30s
+
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform" /v "InactivityShutdownDelay" /t REG_DWORD /d "4294967295" /f
